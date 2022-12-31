@@ -3,6 +3,8 @@ import moderngl as mgl
 import sys
 
 from model import *
+from camera import Camera
+
 
 class GraphicEngine: # 2 50
 	def __init__(self, win_size=(1280, 720)):
@@ -15,7 +17,8 @@ class GraphicEngine: # 2 50
 		self.ctx = mgl.create_context()
 		self.clock = pg.time.Clock()
 		# Scene
-		self.scene = Triangle(self)
+		self.camera = Camera(self)
+		self.scene = Cube(self)
 
 	def quit(self):
 		self.scene.destroy()
