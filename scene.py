@@ -6,6 +6,9 @@ class Scene:
 		self.app = app
 		self.objects = []
 		self.load()
+		# skybox
+		#self.skybox = SkyBox(app)
+		self.skybox = AdvancedSkyBox(app)
 
 	def add_object(self, obj):
 		self.objects.append(obj)
@@ -24,3 +27,4 @@ class Scene:
 	def render(self):
 		for obj in self.objects:
 			obj.render()
+		self.skybox.render()
