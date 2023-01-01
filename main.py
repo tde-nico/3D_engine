@@ -4,6 +4,7 @@ import sys
 
 from model import *
 from camera import Camera
+from light import Light
 
 
 class GraphicEngine: # 2 50
@@ -22,6 +23,7 @@ class GraphicEngine: # 2 50
 		self.time = 0
 		self.delta_time = 0
 		# Scene
+		self.light = Light()
 		self.camera = Camera(self)
 		self.scene = Cube(self)
 
