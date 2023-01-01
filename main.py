@@ -5,6 +5,8 @@ import sys
 from model import *
 from camera import Camera
 from light import Light
+from mesh import Mesh
+from scene import Scene
 
 
 class GraphicEngine: # 2 50
@@ -25,10 +27,11 @@ class GraphicEngine: # 2 50
 		# Scene
 		self.light = Light()
 		self.camera = Camera(self)
-		self.scene = Cube(self)
+		self.mesh = Mesh(self)
+		self.scene = Scene(self)
 
 	def quit(self):
-		self.scene.destroy()
+		self.mesh.destroy()
 		pg.quit()
 		sys.exit()
 

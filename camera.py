@@ -37,7 +37,7 @@ class Camera:
 		self.forward = glm.normalize(self.forward)
 		self.right = glm.normalize(glm.cross(self.forward, glm.vec3(0, 1, 0)))
 		self.up = glm.normalize(glm.cross(self.right, self.forward))
-		
+
 
 	def update(self):
 		self.move()
