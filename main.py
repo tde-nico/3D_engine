@@ -7,9 +7,10 @@ from camera import Camera
 from light import Light
 from mesh import Mesh
 from scene import Scene
+from scene_renderer import SceneRenderer
 
 
-class GraphicEngine: # 2 50
+class GraphicEngine:
 	def __init__(self, win_size=(1280, 720)):
 		pg.init()
 		self.WIN_SIZE = win_size
@@ -29,9 +30,11 @@ class GraphicEngine: # 2 50
 		self.camera = Camera(self)
 		self.mesh = Mesh(self)
 		self.scene = Scene(self)
+		self.scene_renderer = SceneRenderer(self)
 
 	def quit(self):
 		self.mesh.destroy()
+		self.scene_renderer.destroy()
 		pg.quit()
 		sys.exit()
 
@@ -45,7 +48,7 @@ class GraphicEngine: # 2 50
 
 	def render(self):
 		self.ctx.clear(color=(0.08, 0.16, 0.18))
-		self.scene.render()
+		self.scene_renderer.render()
 		pg.display.flip()
 
 	def get_time(self):
